@@ -1,0 +1,76 @@
+#So , this first version for expiriments with my friend
+def Chat():
+
+    #Data
+    #Дополни все списки, куча не написаных важных input-овых фраз
+    tabs = '\n__________________________________________________________________________________________________________\n'
+    k = "Kevin -> "
+
+    hi_list = ['hi','hi!','hi !','Hi!','Hi !','Hi','HI','HI!','HI.','HI !','Hi.','Hi.']
+
+    morning_list = ['Good morning!','Good morning !','Good morning','Good morning.','Good morning .','good morning!','good morning !',
+                    'GOOD MORNING','GOOD MORNING!','GOOD MORNING !','GOOD MORNING.','GOOD MORNING .']
+
+    hello_list = ['hello','HELLO','Hello','hello!','HELLO!','Hello!','hello.','HELLO.','Hello','hello!','HELLO!','Hello.']
+
+    wby_list = ['How are you?','HOW ARE YOU?','How are you ?','How are y?','how are you','how are you?','How are you']
+    wby2_list = ['well,how do you do','well,how do you do?','Well,how do you do?','well how do you do ?',
+                 'i mean,how are you','i mean,how are you?','I mean,how are you','I mean,how are you?',
+                 'i mean, how are you ?','I mean, how are you?','i mean, how are you','i mean,how are you?',
+                 'I mean, how are you','I mean, how are you?','i mean, how are you ?','I mean, how are you?']
+    wby2_questions = ['are you serious?','are you serious ?','Are you serious?','Are you serious ?','are you serious?!',
+                      'are you serious ?!','Are you serious?!','Are you serious ?!','are you serious???']
+
+    perfect_mood = ['I am perfect','Perfect','Nice','Super!','nice','super!','perfect','Perfect!','Nice!','Super!','nice','super!']
+
+    good_mood = ['I am good','Good','I am well','Well','well','good','Good!','Good.','good.','good!','i am good','I am good!']
+
+    ok_mood = ['I am okey','I am okey!','I am ok','I am ok!','OK','I am not bad','I ok','im ok','im ok!','ok']
+
+    bad_mood = ['I am bad','I am bad!','I am very bad','Bad','bad','I am not bad','I am so bad','BAD','Not good','I am not good',
+                'I am not good!','Im not good','I am not good','I am not good','I am not good','I am not good','not good','Not good']
+
+
+    #Шаблоны ответов
+    answer_dict = {'Hello answer': 'Hello , my name is Kevin , I can talk with you.',
+                   'Wby answer': 'I am good , thank you for caring , what about you ?',
+                   'Wby2 quest': 'Hm... Yes , I am. Sorry , I just study to talk with people. Thank you for understanding'}
+    wby_dict = {'perfect': 'Awesome, you have a great day?',
+                'good': 'Thats good!',
+                'ok': 'Cool)',
+                'bad': 'Oh...Sorry :( May I help you?'}
+
+    #Chat
+    while True:
+        print(tabs)
+        user = input("Enter a messege :")
+        print(tabs)
+        if user in hello_list or user in hi_list or user in morning_list:
+            print(k+answer_dict['Hello answer'])
+            continue
+        if user in wby_list or user in wby2_list:
+            print(k+answer_dict['Wby answer'])
+            continue
+        if user in perfect_mood:
+            print(k+wby_dict['perfect'])
+            continue
+        if user in good_mood:
+            print(k+wby_dict['good'])
+            continue
+        if user in ok_mood:
+            print(k+wby_dict['ok'])
+            continue
+        if user in bad_mood:
+            print(k+wby_dict['bad'])
+            continue
+        if user in wby2_questions:
+            print(answer_dict['Wby2 quest'])
+        if user == "EXIT":
+            print(k+"Bye , see you soon :)")
+            Finish()
+            break
+        if user == "":
+            print(k+"Sorry , but You don't write anything")
+
+
+Chat()
